@@ -13,7 +13,7 @@ To get a local copy of this project:
 #### Clone this repository or download the Zip folder:"
 
 ```bash command
-$ git clone https://github.com/tarek102/oop-school-library.git
+$ git clone https://github.com/tarek102/blog-app.git
 ```
 
 ## Author
