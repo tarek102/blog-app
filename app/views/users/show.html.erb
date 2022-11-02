@@ -1,11 +1,25 @@
 <div>
-  <h2>User Details</h2>
+  <div>
+    <img src="<%= @user.photo %>" alt="<%= @user.name %>">
+    <div>
+      <h2><%= @user.name %></h2>
+      <h4><%= @user.posts.count %></h4>
+    </div>
+  </div>
+  <div>
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
 
-  <ul>
-    <li><h4><%= @user.name %></h4></li>
-    <li><h4><%= @user.post_counter %></h4></li>
-    <li><p><%= @user.bio %></p></li>
-  </ul>
+  <div class='posts'>
 
+    <% @user.posts.each do |post| %>
+      <h3><%= post.title%></h3>
+      <p><%= post.text%></p>
+      <h5>Comments: <%= post.comments_counter%></h5>
+      <h5>Likes: <%= post.likes_counter%></h5>
+    <% end %>
+  </div>
+    
 
 </div>

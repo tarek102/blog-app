@@ -1,3 +1,16 @@
-<div>
-  <h2>list posts</h2>
-</div>
+<section>
+  <div class='post-info'>
+    <h2>Post #<%= @post.id %> by <%= @post.author.name %></h2>
+    <h5>Comments: <%= @post.comments_counter%></h5>
+    <h5>Likes: <%= @post.likes_counter%></h5>
+    <div><p><%= @post.text%></p></div>
+  </div>
+
+  <div class='comments'>
+    <ul>
+      <% @post.comments.each do |comment| %>
+        <li><%= comment.author.name%> : <%= comment.text%></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
