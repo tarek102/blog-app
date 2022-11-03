@@ -1,25 +1,36 @@
-<div>
-  <div>
-    <img src="<%= @user.photo %>" alt="<%= @user.name %>">
-    <div>
+<div class='user-show'>
+
+
+  <div class='users-list'>
+    <div class='user-img'>
+      <img src="<%= @user.photo %>" alt="<%= @user.name %>">
+    </div>
+    <div class='user-info'>
       <h2><%= @user.name %></h2>
-      <h4><%= @user.posts.count %></h4>
+      <h5>Number of posts: <%= @user.posts.count %></h5>
     </div>
   </div>
-  <div>
+  <div class='bio'>
     <h3>Bio</h3>
     <p><%= @user.bio %></p>
   </div>
 
-  <div class='posts'>
+
 
     <% @user.posts.each do |post| %>
-      <h3><%= post.title%></h3>
-      <p><%= post.text%></p>
-      <h5>Comments: <%= post.comments_counter%></h5>
-      <h5>Likes: <%= post.likes_counter%></h5>
+      <div class='posts'>
+        <h3><%= post.title%></h3>
+        <div class='post-text'>
+          <p><%= post.text%></p>
+          <div class='post-react'>
+            <h5>Comments: <%= post.comments_counter%></h5>
+            <h5>Likes: <%= post.likes_counter%></h5>
+          </div>
+          
+        </div>
+      </div>
     <% end %>
-  </div>
-    
+
+      <button>See all posts</button>
 
 </div>

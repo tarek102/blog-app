@@ -1,0 +1,47 @@
+.post-main {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-main ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.post-main  ul > li {
+  list-style: none;
+  margin-top: 25px;
+  width: 100%;  
+  padding: 15px;
+}
+
+.comments ul li {
+  list-style: none;
+}
+
+.post-sec {
+  padding: 10% 20%;
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.post-react {
+  display: flex;
+}
+
+.post-react h5 {
+  margin: 0 15px;
+}
+
+.post-text {
+  margin: 5% 0;
+}
