@@ -1,14 +1,27 @@
-<div>
+<div class='main-div'>
   <h1>
     List of all Users
   </h1>
 
-  <% @users.each do |user| %>
+  
 
   <ul>
-    <li><%= user.name%></li>
-    <li><%= user.photo%></li>
-    <li><%= user.bio%></li>
-  </ul>
+
+  <% @users.each do |user| %>
+    <li>
+      <div class='users-list'>
+        <div class='user-img'>
+          <%= image_tag user.photo %>
+          <img src="https://www.unsplash.com/photos/F_-0BxGuVvo" alt="<%= user.name %>">
+          <img src='<%= user.photo %>' alt='<%=user.name %> thumbnail' />
+        </div>
+        <div class='user-info'>
+          <h3><%= user.name%></h3>
+          <h5>Number of posts: <%= user.post_counter %></h5>
+        </div>
+      </div>
+    </li>
   <% end %>
+  </ul>
+
 </div>
