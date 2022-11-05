@@ -22,10 +22,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def new
-    @post = Post.new
-  end
-
   private
 
   def post_params
