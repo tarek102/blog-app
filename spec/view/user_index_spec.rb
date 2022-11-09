@@ -1,7 +1,8 @@
 require 'rails_helper'
 RSpec.describe 'User index', type: :feature do
   before(:example) do
-    @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', post_counter: 1)
+    @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.',
+                        post_counter: 1)
     visit users_path
   end
   describe 'GET /users' do
