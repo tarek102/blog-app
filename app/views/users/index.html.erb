@@ -14,7 +14,7 @@
           <%= image_tag user.photo %>
         </div>
         <div class='user-info'>
-          <h3><%= user.name%></h3>
+          <h2><%= link_to user.name, user_path(user) %></h2>
           <h5>Number of posts: <%= user.post_counter %></h5>
         </div>
       </div>

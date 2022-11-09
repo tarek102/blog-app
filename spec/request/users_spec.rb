@@ -21,7 +21,7 @@ RSpec.describe User, type: :request do
 
   describe 'GET #show' do
     before(:example) do
-      get '/users/175'
+      get '/users/380'
     end
 
     it 'response status was correct' do
@@ -32,8 +32,8 @@ RSpec.describe User, type: :request do
       expect(response).to render_template(:show)
     end
 
-    it "response body includes correct placeholder text, 'User Details'" do
-      expect(response.body).to include('User Details')
+    it "response body includes correct placeholder text, 'Number of posts'" do
+      expect(response.body).to include('Number of posts')
     end
   end
 end
