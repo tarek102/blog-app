@@ -21,7 +21,7 @@ RSpec.describe User, type: :request do
 
   describe 'GET #show' do
     before(:example) do
-      get '/users/380'
+      get '/users/192'
     end
 
     it 'response status was correct' do

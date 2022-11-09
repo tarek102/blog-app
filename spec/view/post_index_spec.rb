@@ -9,7 +9,7 @@ RSpec.describe 'Post index', type: :feature do
       post_counter: 0
     )
 
-    @post1 = Post.create(
+    @post1 = @user.posts.create(
       author: @user,
       title: 'My first post',
       text: 'This is my first post',
@@ -17,7 +17,7 @@ RSpec.describe 'Post index', type: :feature do
       likes_counter: 0
     )
 
-    @post2 = Post.create(
+    @post2 = @user.posts.create(
       author: @user,
       title: 'My second post',
       text: 'This is my second post',
@@ -25,10 +25,12 @@ RSpec.describe 'Post index', type: :feature do
       likes_counter: 0
     )
 
-    Comment.create(post_id: @post1.id, author_id: @user.id, text: 'Great job!')
-    Comment.create(post_id: @post2.id, author_id: @user.id, text: 'Thanks for the effort')
-    Like.create(post_id: @post1.id, author_id: @user.id)
-    Like.create(post_id: @post2.id, author_id: @user.id)
+    # Comment.create(post: @post, author: @user, text: 'This is first comment!')
+
+    # @post1.comments.create(post_id: @post1.id, author_id: @user.id, text: 'Great job!')
+    # @post1.comments.create(post_id: @post2.id, author_id: @user.id, text: 'Thanks for the effort')
+    # Like.create(post_id: @post1.id, author_id: @user.id)
+    # Like.create(post_id: @post2.id, author_id: @user.id)
 
     visit user_posts_path(@user)
   end
