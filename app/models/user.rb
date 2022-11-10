@@ -12,7 +12,6 @@ class User < ApplicationRecord
 
   after_initialize :init
 
-
   has_many :posts, foreign_key: 'author_id'
   has_many :comments, foreign_key: 'author_id'
   has_many :likes, foreign_key: 'author_id'
@@ -26,5 +25,4 @@ class User < ApplicationRecord
   def init
     self.post_counter ||= 0
   end
-
 end
