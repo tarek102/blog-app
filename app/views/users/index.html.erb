@@ -11,7 +11,7 @@
     <li>
       <div class='users-list'>
         <div class='user-img'>
-          <%= image_tag user.photo %>
+          <%# <%= image_tag user.photo %> 
         </div>
         <div class='user-info'>
           <h2><%= link_to user.name, user_path(user) %></h2>
@@ -21,5 +21,5 @@
     </li>
   <% end %>
   </ul>
-  <%= link_to 'Create post', new_user_post_path(@user) %>
+  <%# <%= link_to 'Create post', new_user_post_path(@user) %> %>
 </div>

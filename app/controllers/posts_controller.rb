@@ -12,8 +12,11 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  # skip_before_action :verify_authenticity_token
+
   def create
     @post = Post.new(post_params)
+    # @post = Post.new(title: post_params[:title], text: post_params[:text], author: current_user)
     @post.author = current_user
     if @post.save
       redirect_to user_posts_path(current_user)
