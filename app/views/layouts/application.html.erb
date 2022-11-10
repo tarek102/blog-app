@@ -7,12 +7,37 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    
     <%= stylesheet_link_tag "users.css" %>
     <%= stylesheet_link_tag "posts.css" %>
+    <%= stylesheet_link_tag "login.css" %>
+    <%= stylesheet_link_tag "signup.css" %>
+
+
   </head>
 
   <body>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div>
+      <% if user_signed_in? %>
+          <li class="logout">
+            <%= link_to "Add User", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="logout-allign">
+            <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="logout-allign">
+            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="logout-allign">
+            <%= link_to "Sing In", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+
+    </div>
     <%= yield %>
   </body>
 </html>
