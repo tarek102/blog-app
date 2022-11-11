@@ -16,7 +16,7 @@ class Post < ApplicationRecord
   end
 
   def decrease_posts_counter
-    author.decrement!(:posts_counter)
+    author.decrement!(:post_counter)
   end
 
   def init
