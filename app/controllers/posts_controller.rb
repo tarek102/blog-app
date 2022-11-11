@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
@@ -6,13 +8,18 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
   def new
     @post = Post.new
   end
 
-  # skip_before_action :verify_authenticity_token
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to user_posts_path(current_user, @post), notice: 'Post deleted successfully'
+  end
 
   def create
     # @post = Post.new(post_params)

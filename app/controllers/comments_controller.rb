@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_user, only: [:create]
+  load_and_authorize_resource
 
   def create
     @comment = Comment.new(comment_params)
@@ -18,6 +18,13 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @comment.destroy
+    redirect_to user_post_path(@post.author, @post)
   end
 
   def comment_params
