@@ -27,7 +27,7 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
 
-    can :read, :all  # start by defining rules for all users, also not logged ones
+    can :read, :all # start by defining rules for all users, also not logged ones
     return unless user.present?
 
     can :manage, Post, author_id: user.id # if the user is logged in can manage it's own posts
