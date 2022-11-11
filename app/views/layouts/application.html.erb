@@ -20,8 +20,10 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div>
-      <% if user_signed_in? %>
+    
+    <div class='menu'>
+      <ul>
+        <% if user_signed_in? %>
           <li class="logout">
             <%= link_to "Add User", new_user_registration_path, class: "nav-link" %>
           </li>
@@ -36,8 +38,9 @@
             <%= link_to "Sing In", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
-
+      </ul>
     </div>
+
     <%= yield %>
   </body>
 </html>
